@@ -1,5 +1,17 @@
 package com.ssm.service.impl;
 
+import java.io.IOException;
+import java.lang.reflect.Method;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.log4j.Logger;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
+import org.aspectj.lang.JoinPoint;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.ssm.annotation.Log;
 import com.ssm.dao.OperLogMapper;
 import com.ssm.model.OperLog;
@@ -7,17 +19,6 @@ import com.ssm.model.User;
 import com.ssm.service.LogService;
 import com.ssm.utils.ConstantVar;
 import com.ssm.utils.IPAddressUtil;
-import org.apache.log4j.Logger;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.subject.Subject;
-import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
-import java.lang.reflect.Method;
 
 @Service(value="logService")
 public class LogServiceImpl implements LogService {

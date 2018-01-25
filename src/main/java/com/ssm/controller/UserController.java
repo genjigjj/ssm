@@ -2,13 +2,8 @@ package com.ssm.controller;
 
 import javax.annotation.Resource;
 
-import com.ssm.annotation.Redis;
-import com.ssm.model.User;
-import com.ssm.service.UserService;
 import org.apache.log4j.Logger;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSONObject;
+import com.ssm.annotation.Redis;
+import com.ssm.model.User;
+import com.ssm.service.UserService;
 
-import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
 @Controller
 @RequestMapping("/manage/user")

@@ -1,9 +1,10 @@
 package com.ssm.utils;
 
-import org.apache.log4j.Logger;
+import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
+
+import org.apache.log4j.Logger;
 
 /**
  * 获取请求主机的IP地址等

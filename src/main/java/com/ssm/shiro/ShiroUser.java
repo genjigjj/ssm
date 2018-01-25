@@ -1,9 +1,8 @@
 package com.ssm.shiro;
 
-import lombok.Data;
-import lombok.Getter;
-
 import java.io.Serializable;
+
+import lombok.Data;
 
 /**
  * @description：自定义Authentication对象，使得Subject除了携带用户的登录名外还可以携带更多信息

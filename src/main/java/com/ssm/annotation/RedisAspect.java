@@ -1,8 +1,5 @@
 package com.ssm.annotation;
 
-import com.alibaba.fastjson.JSONObject;
-import com.ssm.controller.BaseController;
-import com.ssm.redis.RedisUtil;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -12,6 +9,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
+
+import com.ssm.controller.BaseController;
+import com.ssm.redis.RedisUtil;
 
 /**
  * @Description: 切面：查询前先查询redis，如果查询不到穿透到数据库，从数据库查询到数据后，保存到redis，然后下次查询可直接命中缓存

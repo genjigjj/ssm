@@ -1,9 +1,11 @@
 package com.ssm.redis;
 
-import com.ssm.utils.SerializeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
+
+import com.ssm.utils.SerializeUtil;
 
 /**
  * Redis连接池工具类

@@ -1,6 +1,5 @@
 package com.ssm.utils;
 
-import lombok.Data;
 
 /**
  * @Autor jiangcaijun

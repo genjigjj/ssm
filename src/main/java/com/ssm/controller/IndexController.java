@@ -1,10 +1,7 @@
 package com.ssm.controller;
 
-import com.alibaba.fastjson.JSONObject;
-import com.ssm.annotation.Log;
-import com.ssm.redis.RedisUtil;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.subject.Subject;
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletRequest;
+import com.alibaba.fastjson.JSONObject;
+import com.ssm.annotation.Log;
+import com.ssm.redis.RedisUtil;
 
 @Controller
 public class IndexController extends BaseController{
