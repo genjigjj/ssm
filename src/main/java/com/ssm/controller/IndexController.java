@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.alibaba.fastjson.JSONObject;
 import com.ssm.annotation.Log;
 import com.ssm.redis.RedisUtil;
+import com.ssm.utils.Result;
 
 @Controller
 public class IndexController extends BaseController{
@@ -37,7 +38,7 @@ public class IndexController extends BaseController{
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/testRequestHashCode", method = RequestMethod.POST)
-	public Object testRequestHashCode(HttpServletRequest request) {
+	public Result testRequestHashCode(HttpServletRequest request) {
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("requestHashCode",request.hashCode());
 		return renderSuccess(jsonObject.toJSONString());

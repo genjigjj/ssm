@@ -3,6 +3,7 @@ package com.ssm.annotation;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,6 +31,7 @@ public class LogAspect {
 	@Pointcut("@annotation(com.ssm.annotation.Log)") //@annotation用于匹配当前执行方法持有指定注解的方法；
 	public void logAspect() {
 	}
+	
 
 	/**
 	 * 后置通知 用于拦截Controller层记录用户的操作
@@ -42,6 +44,7 @@ public class LogAspect {
 	@AfterReturning(returning = "rvt", pointcut = "logAspect()")
 	public void AfterReturning(JoinPoint joinPoint, Object rvt) {
 		// 保存数据库
+		LOG.info("执行后置通知 ");
 		logService.saveByJoinPoint(joinPoint,null);
 	}
 }

@@ -14,6 +14,7 @@
 	http://www.springframework.org/schema/aop
     http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+	<!-- 解析器注册 --> 
 	<bean
 		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 		<property name="messageConverters">
@@ -26,6 +27,7 @@
 		</property>
 	</bean>
 
+	<!-- String类型解析器，允许直接返回String类型的消息 -->  
 	<bean id="stringHttpMessageConverter"
 		class="org.springframework.http.converter.StringHttpMessageConverter">
 		<property name="supportedMediaTypes">

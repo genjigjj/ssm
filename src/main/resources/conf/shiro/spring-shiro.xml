@@ -35,7 +35,6 @@
 			<value>
 				/guest/** = anon
 				/manage/** = authc
-				/* = user
 			</value>
 		</property>
 	</bean>

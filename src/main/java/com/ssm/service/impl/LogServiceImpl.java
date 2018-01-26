@@ -50,7 +50,7 @@ public class LogServiceImpl implements LogService {
             Method[] methods = targetClass.getMethods();
             for (Method method : methods) {
                 if (method.getName().equals(methodName)) {
-                    Class[] clazzs = method.getParameterTypes();
+                    Class<?>[] clazzs = method.getParameterTypes();
                     if (clazzs.length == arguments.length) {
                         if(method.getAnnotation(Log.class) != null){ // 如果包含注解@log()
                             operEvent.append(method.getAnnotation(Log.class).value());
@@ -109,6 +109,7 @@ public class LogServiceImpl implements LogService {
             operLog.setOperStatus(ConstantVar.OPER_LOG_STATUS.OPER_LOG_STATUS_SUCCESS_4ENUM.getValue());
         }
         operLogMapper.insertSelective(operLog);
+        LOG.info("保存登录日志");
     }
     /**
      * 异常数组转成字符串

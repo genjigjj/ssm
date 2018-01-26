@@ -42,12 +42,12 @@ public class ExceptionAspect {
     public void exceptionAspect() {
     }
 
-    @AfterReturning(returning = "rvt", pointcut = "exceptionAspect()")
+ /*   @AfterReturning(returning = "rvt", pointcut = "exceptionAspect()")
     public void AfterReturning(JoinPoint joinPoint, Object rvt) {
         // 保存数据库
         logService.saveByJoinPoint(joinPoint,null);
     }
-
+*/
     @Around("exceptionAspect()")
     public Object around(ProceedingJoinPoint joinPoint){
         Object object = null;

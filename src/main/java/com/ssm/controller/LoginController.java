@@ -21,6 +21,7 @@ import com.ssm.annotation.Log;
 import com.ssm.model.User;
 import com.ssm.service.UserService;
 import com.ssm.utils.ConstantVar;
+import com.ssm.utils.Result;
 
 /**
  * Created by jiangcaijun on 2017/3/29.
@@ -46,7 +47,7 @@ public class LoginController extends BaseController{
     @Log(value = "登录操作", entry = { "username=用户名" })
     @RequestMapping(value = "/guest/loginPost", method = RequestMethod.POST)
     @ResponseBody
-    public Object loginPost(String username, String password) {
+    public Result loginPost(String username, String password) {
         if (StringUtils.isBlank(username)) {
             return renderError("用户名不能为空");
         }
@@ -77,6 +78,7 @@ public class LoginController extends BaseController{
         User user = userService.findUserByUserName(username);
 
         subject.getSession().setAttribute(ConstantVar.LOGIN_USER, user);
+        LOG.info("退出登录方法");
         return renderSuccess("登录成功");
     }
 
@@ -88,7 +90,7 @@ public class LoginController extends BaseController{
     @Log(value = "用户退出操作")
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     @ResponseBody
-    public Object logout() {
+    public Result logout() {
         Subject subject = SecurityUtils.getSubject();
         subject.logout();
         return renderSuccess("退出成功");

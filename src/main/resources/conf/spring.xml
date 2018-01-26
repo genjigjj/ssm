@@ -23,20 +23,22 @@
 	<import resource="classpath:conf/spring-mybatis.xml"/>
     <import resource="classpath:conf/spring-redis.xml"/>
 
+	<!-- 告知Spring，我们启用注解驱动。然后Spring会自动为我们注册Bean到工厂中，来处理我们的请求。 -->
 	<mvc:annotation-driven/>
 
+	<!-- 告知Spring 来扫描指定包下的类，并注册被@Component，@Controller，@Service，@Repository等注解标记的组件 -->
 	<context:component-scan base-package="com.ssm" />
 
 	<!-- 启动对@AspectJ注解的支持 -->
-	<aop:aspectj-autoproxy proxy-target-class="true"/>
+	<aop:aspectj-autoproxy/>
 
 	<!-- 日志注解 -->
-	<bean id="logAspect" class="com.ssm.annotation.LogAspect" />
+	<!-- <bean id="logAspect" class="com.ssm.annotation.LogAspect" /> -->
 
 	<!-- 异常注解 -->
-	<bean id="exceptionAspect" class="com.ssm.annotation.ExceptionAspect"/>
+<!-- 	<bean id="exceptionAspect" class="com.ssm.annotation.ExceptionAspect"/> -->
 
 	<!-- redis缓存注解 -->
-	<bean id="redisAspect" class="com.ssm.annotation.RedisAspect"/>
+	<!-- <bean id="redisAspect" class="com.ssm.annotation.RedisAspect"/> -->
 
 </beans>
